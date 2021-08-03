@@ -1,0 +1,73 @@
+{% for blog in blogs %}
+    <div class="row">
+        <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample{{ blog.id }}">
+                <div class="card card-body">
+                    <form action="http://localhost:11111/blog/" method="post" class="form">
+                        <div class="mb-3">
+                            <label for="img_src" class="form-label">Photo of the city</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="img_src"
+                                   name="img_src"
+                                   value="{{ blog.img_src }}"
+                            >
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Name city</label>
+                            <input type="text" class="form-control" name="city" value="{{ blog.city }}">
+                        </div>
+                        <input type="hidden" name="id" value="{{ blog.id }}">
+                        <button class="btn btn-primary ms-auto" type="submit">Edit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="collapse multi-collapse" id="edithtml{{ blog.id }}">
+                <div class="card card-body">
+                    <form method="post" action="http://localhost:11111/blog/">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="text">Edit text HTML content</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <button class="btn btn-sm"
+                                            type="button"
+                                            onclick="onEditButtonClick('b');">
+                                        <img class="intLink"
+                                             alt="Bold"
+                                             src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAInhI+pa+H9mJy0LhdgtrxzDG5WGFVk6aXqyk6Y9kXvKKNuLbb6zgMFADs="/>
+                                    </button>
+                                    <button class="btn btn-sm"
+                                            type="button"
+                                            onclick="onEditButtonClick('i');">
+                                        <img class="intLink"
+                                             alt="Italic"
+                                             src="data:image/gif;base64,R0lGODlhFgAWAKEDAAAAAF9vj5WIbf///yH5BAEAAAMALAAAAAAWABYAAAIjnI+py+0Po5x0gXvruEKHrF2BB1YiCWgbMFIYpsbyTNd2UwAAOw=="/>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="hidden" name="id" value="{{ blog.id }}">
+                                    <textarea
+                                            class="form-control"
+                                            id="text"
+                                            name="text"
+                                    >{{ blog.text }}</textarea>
+                                    <button class="btn btn-success mt-2" type="submit">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

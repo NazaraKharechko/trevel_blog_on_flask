@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-between align-items-center">
+    <div class="btn-group">
+        <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#multiCollapseExample{{ blog.id }}">Edit Post
+        </button>
+        <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#edithtml{{ blog.id }}">Edit post text
+        </button>
+        <a
+                class="btn btn-sm btn-outline-danger"
+                href="delete/{{blog.id}}">
+            Delete
+        </a>
+    </div>
+    <small class="text-muted">{{ blog.id + 15 }} mins</small>
+</div>

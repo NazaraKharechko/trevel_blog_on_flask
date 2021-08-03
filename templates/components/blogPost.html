@@ -1,0 +1,16 @@
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 py-2">
+    <div class="col" style="flex: auto">
+        <div class="card shadow-sm">
+            <img src="{{ blog.img_src }}" class="img-fluid" alt="{{ blog.city }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ blog.city }}</h5>
+                <div>
+                    <!-- The solution should be defined here-->
+                    <!-- We can change blog.text | safe here-->
+                    <p class="card-text" id="textid">{{ blog.text | safe }}</p>
+                </div>
+                {% include "components/blogPostActions.html" %}
+            </div>
+        </div>
+    </div>
+</div>
